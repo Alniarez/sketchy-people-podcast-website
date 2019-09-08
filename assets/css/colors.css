@@ -1,0 +1,46 @@
+@charset "UTF-8";
+:root {
+    --light-gray: #dbdbdb; /* var(--light-gray) */
+    --black-color: #000000; /* var(--black-color) */
+    --shadow-color: #000000; /* var(--shadow-color) */
+    --light-color: #d7d7d7; /* var(--light-color) */
+    --white-color: #ffffff; /* var(--white-color) */
+    --highlights-color: #ffae00; /* var(--highlights-color) */
+  }
+
+body {
+  background-color: var(--shadow-color);
+  color: var(--light-color);
+}
+
+  .light-theme,
+  .light-element {
+    color: var(--shadow-color);
+    background-color: var(--white-color);
+  }
+  
+  .light-theme ::selection,
+  .light-element ::selection {
+    background-color: var(--highlights-color);
+  }
+  
+  .dark-theme,
+  .dark-element {
+    background-color: var(--shadow-color);
+    color: var(--light-color);
+  }
+  
+  .dark-theme ::selection,
+  .dark-element ::selection {
+    background-color: var(--highlights-color);
+    color: var(--shadow-color);
+  }
+  
+  .active {
+    border-left: 0.45rem solid var(--highlights-color);
+    border-right: 0.45rem solid var(--highlights-color);
+  }
+  
+  .transparent-bg {
+    background-color: rgba(0, 0, 0, 0);
+  }
