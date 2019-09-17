@@ -6,6 +6,9 @@
     --light-color: #d7d7d7; /* var(--light-color) */
     --white-color: #ffffff; /* var(--white-color) */
     --highlights-color: #ffae00; /* var(--highlights-color) */
+
+    --progress-color: orange;
+    --progress-fill-color: coral;
   }
 
 body {

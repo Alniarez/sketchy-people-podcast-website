@@ -448,11 +448,11 @@ button:hover {
   top: 0;
   border: 0;
 }
-.progress-line.active, 
-.progress-line.active:before {
+.progress-line.loading, 
+.progress-line.loading:before {
   height: 6px;
 }
-.progress-line.active:before {
+.progress-line.loading:before {
   background-color: var(--progress-fill-color);
   content: '';
   animation: running-progress 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;

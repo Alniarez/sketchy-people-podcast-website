@@ -5,7 +5,7 @@ function setTheme(theme) {
     $('body').addClass(theme)
     currentTheme = theme
 }
-
+/* // Multi paralax
 window.addEventListener('scroll', () => {
     let parent = document.getElementById('parallax-container');
     let children = parent.getElementsByTagName('div');
@@ -13,4 +13,4 @@ window.addEventListener('scroll', () => {
       children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)';
     }
  }, false)
-     
+*/
