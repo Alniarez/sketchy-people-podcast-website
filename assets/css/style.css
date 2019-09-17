@@ -352,7 +352,6 @@ a {
 }
 
 /* Buttons */
-
 .pointer {
   cursor: pointer;
 }
@@ -433,4 +432,33 @@ button:hover {
     left: 0;
     opacity: 1;
   }
+}
+
+/* Progress bar */
+.progress-line,
+.progress-line:before {
+  max-height: 6px;
+  width: 100%;
+  margin: 0;
+}
+.progress-line {
+  background-color: var(--progress-color);
+  display: flex;
+  position: fixed;
+  top: 0;
+  border: 0;
+}
+.progress-line.active, 
+.progress-line.active:before {
+  height: 6px;
+}
+.progress-line.active:before {
+  background-color: var(--progress-fill-color);
+  content: '';
+  animation: running-progress 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes running-progress {
+  0% { margin-left: 0px; margin-right: 100%; }
+  50% { margin-left: 25%; margin-right: 0%; }
+  100% { margin-left: 100%; margin-right: 0; }
 }
