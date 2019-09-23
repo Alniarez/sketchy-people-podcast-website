@@ -1,9 +1,9 @@
 ---
 layout: default
-title: About page
+title: Team members
 theme: dark-theme
 ---
 
 # {{ page.title }}
 
-About page
+Profiles of the members of the podcast

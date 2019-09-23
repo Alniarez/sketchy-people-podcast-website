@@ -1,8 +1,6 @@
 ---
-layout: post
-title:  "Episode 1"
+layout: episode
+youtubeId: ppAxZlQY9Jw
 ---
 
-# Episode 1
-
-Cheeseburger
+Here video description and other assets as aditional images or whatsoever

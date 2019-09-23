@@ -4,7 +4,7 @@ title: SPP
 theme: dark-theme
 ---
 
-## Sketchy people podcast
+# Sketchy people podcast
 
 <ul>
   {% for post in site.posts %}

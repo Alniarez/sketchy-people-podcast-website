@@ -1,0 +1,6 @@
+- name: Home
+  link: /
+- name: Team
+  link: /casters/
+- name: About
+  link: /about/
