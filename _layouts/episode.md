@@ -4,3 +4,5 @@ layout: default
 <h1>{{ page.title }}</h1>
 
 {% include youtube.html id=page.youtubeId %}
+
+{{ content }}
