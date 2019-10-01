@@ -2,7 +2,7 @@
 layout: default
 title: SPP
 theme: dark-theme
-autoscroll: false
+autoscroll: true
 pagination: 
   enabled: true
 
