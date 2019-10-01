@@ -5,7 +5,6 @@ theme: dark-theme
 autoscroll: true
 pagination: 
   enabled: true
-
 ---
 <div class="content">
 {% for post in paginator.posts %}
@@ -42,3 +41,6 @@ pagination:
     })
   })
 </script>
+{% if page.autoscroll %}
+<style>.pagination{display: none;}</style>
+{% endif %}
