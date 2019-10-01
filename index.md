@@ -2,35 +2,43 @@
 layout: default
 title: SPP
 theme: dark-theme
+autoscroll: false
 pagination: 
   enabled: true
+
 ---
-<!-- This loops through the paginated posts -->
+<div class="content">
 {% for post in paginator.posts %}
-  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-  <p class="author">
-    <span class="date">{{ post.date }}</span>
-  </p>
-  <div class="content">
-    {{ post.content }}
-  </div>
+    <article>
+      <header>
+        <h2><a href="{{ site.siteurl }}{{ post.url }}">{{ post.title }}</a></h2>
+        <h5>{{ post.date | date: "%d %b %Y" }}</h5>
+        <p>{{ post.content | truncatewords:50 | strip_html }}</p>
+      </header>
+    </article>
 {% endfor %}
 
-<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
 <div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">
-      Previous
-    </a>
-  {% else %}
-    <span class="previous">Previous</span>
-  {% endif %}
-  <span class="page_number ">
-    Page: {{ paginator.page }} of {{ paginator.total_pages }}
-  </span>
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-  {% else %}
-    <span class="next ">Next</span>
-  {% endif %}
+{% if paginator.next_page %}
+    <a class="next" href="{{ paginator.next_page_path }}">Load more posts</a>
+{% endif %}
 </div>
+{% endif %}
+</div>
+
+<script src="//unpkg.com/jscroll/dist/jquery.jscroll.min.js"></script>
+<script type="text/javascript">
+  $(function() {
+    $('.content').jscroll({
+      contentSelector: ".content",
+      pagingSelector: '.pagination',
+{% if page.autoscroll %}
+      nextSelector: '.next',
+      autoTrigger: true
+{% else %}
+      autoTrigger: false
+{% endif %}
+    })
+  })
+</script>
