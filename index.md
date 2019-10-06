@@ -1,5 +1,6 @@
 ---
 layout: default
+hero: true
 title: SPP
 theme: dark-theme
 autoscroll: true
@@ -25,6 +26,10 @@ pagination:
 </div>
 {% endif %}
 </div>
+
+<footer>
+  <p>End of the page</p>
+</footer>
 
 <script src="//unpkg.com/jscroll/dist/jquery.jscroll.min.js"></script>
 <script type="text/javascript">

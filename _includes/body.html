@@ -1,5 +1,46 @@
+
+{% if page.hero %}
+<div id="parallax-container" class="display-container">
+    <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/plane-first.png);"></div>
+    <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/plane1.png);"></div>
+    <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/plane2.png);"></div>
+    <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/plane3.png);"></div>
+    <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/plane-last.png);"></div>
+    <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/casters.png);"></div>
+</div>
+<style>
+    #parallax-container {
+        display: block;
+        height: 80%;
+        position: relative;
+        z-index: -1;
+    }
+    #parallax-container .parallax-container-element {
+        position: fixed;
+        top: 0;
+        background-position: center !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: translateY(0px);
+        height: 80%;
+        width: 100%;
+    }
+</style>
+<script>
+  // Multi paralax
+  window.addEventListener('scroll', () => {
+    let parent = document.getElementById('parallax-container');
+    let children = parent.getElementsByTagName('div');
+    for(let i = 0; i < children.length; i++) {
+      children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)';
+    }
+ }, false)
+ </script>
+{% endif %}
+<div style="background-color: black">
 {% include navigation.html %}
 
 <section class="width-limit">
     {{ content }}
 </section>
+</div>

@@ -221,12 +221,12 @@ a {
 }
 
 /* position:sticky needs to be contained inside another element. It's cool but I don't like it very much. */
-/*.sticky{
+.sticky{
 	position: -webkit-sticky;
 	position: sticky;
 	top: 0px;
 }
-*/
+
 .rounded {
   border-radius: 0.285rem;
 }
