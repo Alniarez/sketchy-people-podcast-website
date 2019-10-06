@@ -6,12 +6,13 @@
     <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/plane2.png);"></div>
     <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/plane3.png);"></div>
     <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/plane-last.png);"></div>
-    <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/casters.png);"></div>
+    <div class="display-middle full-screen center">
+        <img class="image" src="{{ site.siteurl }}/assets/images/background/casters.png" alt="Casters">
+    </div>
 </div>
 <style>
     #parallax-container {
         display: block;
-        height: 80%;
         position: relative;
         z-index: -1;
     }
@@ -22,15 +23,38 @@
         background-repeat: no-repeat;
         background-size: cover;
         transform: translateY(0px);
-        height: 80%;
         width: 100%;
+    }
+    @media (max-width: 650px) {
+        #parallax-container, #parallax-container .parallax-container-element {
+            height: 40%;
+            max-height: 200px;
+        }
+    }
+    @media (max-width: 999px) and (min-width: 651px) {
+        #parallax-container, #parallax-container .parallax-container-element {
+            height: 60%;
+            max-height: 400px;
+        }
+    }
+    @media (max-width: 1224px) and (min-width: 1000px) {
+        #parallax-container, #parallax-container .parallax-container-element {
+            height: 60%;
+            max-height: 400px;
+        }
+    }
+    @media (min-width: 1225px) {
+        #parallax-container, #parallax-container .parallax-container-element {
+            height: 80%;
+            max-height: 800px;
+        }
     }
 </style>
 <script>
   // Multi paralax
   window.addEventListener('scroll', () => {
     let parent = document.getElementById('parallax-container');
-    let children = parent.getElementsByTagName('div');
+    let children = parent.getElementsByClassName('parallax-container-element');
     for(let i = 0; i < children.length; i++) {
       children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)';
     }
