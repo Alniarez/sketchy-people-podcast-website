@@ -1,13 +1,13 @@
 
 {% if page.hero %}
-<div id="parallax-container" class="display-container">
+<div id="parallax-container" class="display-container slow-transition">
     <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/plane-first.png);"></div>
     <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/plane1.png);"></div>
     <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/plane2.png);"></div>
     <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/plane3.png);"></div>
     <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/plane-last.png);"></div>
     <div class="display-middle full-screen center">
-        <img class="image" src="{{ site.siteurl }}/assets/images/background/casters.png" alt="Casters">
+        <img class="image" src="{{ site.siteurl }}/assets/images/background/casters.png" alt="Casters" id="hero-image" style="width: 100%; max-width: 1000px;">
     </div>
 </div>
 <style>
@@ -15,6 +15,7 @@
         display: block;
         position: relative;
         z-index: -1;
+        height: 100%;
     }
     #parallax-container .parallax-container-element {
         position: fixed;
@@ -24,42 +25,66 @@
         background-size: cover;
         transform: translateY(0px);
         width: 100%;
+        height: inherit;
     }
-    @media (max-width: 650px) {
-        #parallax-container, #parallax-container .parallax-container-element {
-            height: 40%;
+    @media (max-width: 500px) {
+        #parallax-container{
             max-height: 200px;
         }
     }
-    @media (max-width: 999px) and (min-width: 651px) {
-        #parallax-container, #parallax-container .parallax-container-element {
-            height: 60%;
-            max-height: 400px;
+    @media (max-width: 654px) and (min-width: 501px) {
+        #parallax-container{
+            max-height: 240px;
         }
     }
-    @media (max-width: 1224px) and (min-width: 1000px) {
-        #parallax-container, #parallax-container .parallax-container-element {
-            height: 60%;
-            max-height: 400px;
+    @media (max-width: 777px) and (min-width: 655px) {
+        #parallax-container{
+            max-height: 350px;
         }
     }
-    @media (min-width: 1225px) {
-        #parallax-container, #parallax-container .parallax-container-element {
-            height: 80%;
-            max-height: 800px;
+    @media (min-width: 778px) {
+        #parallax-container{
+            max-height: 100%;
         }
+    }
+    #go-top {
+        display: none;
+        position: fixed;
+        bottom: -10px;
+        right: 24px;
+        z-index: 99;
+        font-size: 24px;
+        border: none;
+        outline: none;
+        background-color: coral;
+        color: white;
+        cursor: pointer;
+        padding: 12px;
+        border-radius: 8px;
+    }
+    #go-top:hover {
+        background-color: #555;
     }
 </style>
 <script>
-  // Multi paralax
-  window.addEventListener('scroll', () => {
+window.addEventListener('scroll', () => {
+    // Multi paralax
     let parent = document.getElementById('parallax-container');
     let children = parent.getElementsByClassName('parallax-container-element');
     for(let i = 0; i < children.length; i++) {
-      children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)';
+        children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)';
     }
- }, false)
+    // Go totop button
+    let goTopButton = document.getElementById('go-top');
+    console.log(parent.scrollHeight)
+    if (document.body.scrollTop > parent.scrollHeight || document.documentElement.scrollTop > parent.scrollHeight) {
+        goTopButton.style.display = "block";
+    } else {
+        goTopButton.style.display = "none";
+    }
+}, false)
  </script>
+ <button onclick="goTop()" id="go-top" title="Go to top">👆</button>
 {% endif %}
 <div style="background-color: black">
 {% include navigation.html %}

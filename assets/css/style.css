@@ -389,6 +389,11 @@ button:hover {
   transition: 0.5s all;
 }
 
+.slow-transition,
+.slow-transition a {
+  transition: 1s all;
+}
+
 .animate-opacity {
   animation: opacity 1s;
 }
