@@ -1,4 +1,3 @@
-
 {% if page.hero %}
 <div id="parallax-container" class="display-container slow-transition">
     <div class="parallax-container-element" style="background: url({{ site.siteurl }}/assets/images/background/plane-first.png);"></div>
@@ -68,26 +67,25 @@
 <script>
 window.addEventListener('scroll', () => {
     // Multi paralax
-    let parent = document.getElementById('parallax-container');
-    let children = parent.getElementsByClassName('parallax-container-element');
+    let parent = document.getElementById('parallax-container')
+    let children = parent.getElementsByClassName('parallax-container-element')
     for(let i = 0; i < children.length; i++) {
-        children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)';
+        children[i].style.transform = 'translateY(-' + (window.pageYOffset * i / children.length) + 'px)'
     }
     // Go totop button
-    let goTopButton = document.getElementById('go-top');
+    let goTopButton = document.getElementById('go-top')
     console.log(parent.scrollHeight)
     if (document.body.scrollTop > parent.scrollHeight || document.documentElement.scrollTop > parent.scrollHeight) {
-        goTopButton.style.display = "block";
+        goTopButton.style.display = "block"
     } else {
-        goTopButton.style.display = "none";
+        goTopButton.style.display = "none"
     }
 }, false)
- </script>
- <button onclick="goTop()" id="go-top" title="Go to top" class="pointer">👆</button>
+</script>
+<button onclick="goTop()" id="go-top" title="Go to top" class="pointer animate-opacity">👆</button>
 {% endif %}
 <div style="background-color: black">
 {% include navigation.html %}
-
 <section class="width-limit">
     {{ content }}
 </section>
