@@ -46,10 +46,9 @@
             max-height: 100%;
         }
     }
-    #go-top {
-        display: none;
+
+    #go-top, #go-down {
         position: fixed;
-        bottom: -10px;
         right: 24px;
         z-index: 99;
         font-size: 24px;
@@ -60,12 +59,19 @@
         padding: 12px;
         border-radius: 8px;
     }
-    #go-top:hover {
+    #go-top{
+        bottom: -10px;
+        display: none;
+    }
+    #go-down{
+        top: -10px;
+    }
+    #go-top:hover, #go-down {
         background-color: #555;
     }
 </style>
 <script>
-window.addEventListener('scroll', () => {
+var scrollEvent = () => {
     // Multi paralax
     let parent = document.getElementById('parallax-container')
     let children = parent.getElementsByClassName('parallax-container-element')
@@ -74,19 +80,24 @@ window.addEventListener('scroll', () => {
     }
     // Go totop button
     let goTopButton = document.getElementById('go-top')
-    console.log(parent.scrollHeight)
+    let goDownButton = document.getElementById('go-down')
     if (document.body.scrollTop > parent.scrollHeight || document.documentElement.scrollTop > parent.scrollHeight) {
         goTopButton.style.display = "block"
+        goDownButton.style.display = "none"
     } else {
         goTopButton.style.display = "none"
+        goDownButton.style.display = "block"
     }
-}, false)
+}
+window.addEventListener('scroll', scrollEvent)
+window.addEventListener('onresize', scrollEvent)
 </script>
+<button onclick="document.getElementById('main-content').scrollIntoView()" id="go-down" title="See the episodes" class="pointer animate-opacity">👇</button>
 <button onclick="goTop()" id="go-top" title="Go to top" class="pointer animate-opacity">👆</button>
 {% endif %}
 <div style="background-color: black">
 {% include navigation.html %}
-<section class="width-limit">
+<section class="width-limit" id="main-content">
     {{ content }}
 </section>
 </div>
