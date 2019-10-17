@@ -3,18 +3,21 @@ layout: default
 hero: true
 title: SPP
 theme: dark-theme
-autoscroll: true
+autoscroll: false
 pagination: 
   enabled: true
 ---
 <div class="content">
 {% for post in paginator.posts %}
-    <article>
-      <header>
+    <article class="index-post row">
+      <header class="col container">
         <h2><a href="{{ site.siteurl }}{{ post.url }}">{{ post.title }}</a></h2>
         <h5>{{ post.date | date: "%d %b %Y" }}</h5>
         <p>{{ post.content | truncatewords:50 | strip_html }}</p>
       </header>
+      <div class="col">
+        <img class="image" src="http://img.youtube.com/vi/{{ post.youtubeId }}/maxresdefault.jpg" alt="Video thumbnail">
+      </div>        
     </article>
 {% endfor %}
 

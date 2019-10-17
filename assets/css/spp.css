@@ -12,3 +12,26 @@
     width:100%;
     position:absolute;
 }
+
+.content .index-post:nth-child(4n-3) {
+    background-color: yellow;
+}
+.content .index-post:nth-child(4n-2) {
+    background-color: darkorange;
+}
+.content .index-post:nth-child(4n-1) {
+    background-color: purple;
+}
+.content .index-post:nth-child(4n) {
+    background-color: violet;
+}
+
+.row{
+    align-items: stretch;
+    padding: 0;
+    margin: 0;
+}
+
+.index-post{
+    max-height: 600px;
+}
