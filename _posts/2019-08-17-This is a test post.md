@@ -1,5 +1,6 @@
 ---
 layout: episode
+title: Episode 0
 youtubeId: ppAxZlQY9Jw
 ---
 

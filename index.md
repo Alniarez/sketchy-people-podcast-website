@@ -16,7 +16,7 @@ pagination:
         <p>{{ post.content | truncatewords:50 | strip_html }}</p>
       </header>
       <div class="col">
-        <img class="image" src="http://img.youtube.com/vi/{{ post.youtubeId }}/maxresdefault.jpg" alt="Video thumbnail">
+        <img class="image" src="https://img.youtube.com/vi/{{ post.youtubeId }}/maxresdefault.jpg" alt="Video thumbnail">
       </div>        
     </article>
 {% endfor %}

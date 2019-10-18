@@ -1,6 +1,6 @@
 ---
 layout: episode
-title: This is a test post copy. TITLE IN FRONT MATTER
+title: Episode 1
 youtubeId: ppAxZlQY9Jw
 ---
 
