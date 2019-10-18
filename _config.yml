@@ -1,5 +1,7 @@
 # Produces a cleaner folder structure when using categories
-permalink: /:year/:month/:day/:title/
+permalink: /blog/:title
+
+netlifycms: true
 
 plugins:
   - jekyll-paginate-v2
@@ -11,3 +13,29 @@ pagination:
   indexpage: page1
   permalink: page:num
   extension: json
+
+# Build settings
+markdown: kramdown
+
+# Kramdown options
+kramdown:
+  # Prevent IDs from being added to h1-h6 tags
+  auto_ids: false
+
+# Exclude from processing.
+# The following items will not be processed.
+exclude:
+  - README.md
+  - LICENSE.txt
+  - netlify.toml
+  - feed.xml
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+backend:
+  name: git-gateway
