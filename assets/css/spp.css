@@ -35,3 +35,86 @@
 .index-post{
     max-height: 600px;
 }
+
+#load-more{
+text-decoration: none;
+
+    display: block;
+    width: 30%;
+    background-color: royalblue;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 1rem;
+    margin: 1rem;
+
+    text-align: center;
+
+    border-radius: 2rem;
+}
+
+#title{
+    font-size: calc(7vw);
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#parallax-container {
+    display: block;
+    position: relative;
+    z-index: -1;
+    height: 100%;
+}
+#parallax-container .parallax-container-element {
+    position: fixed;
+    top: 0;
+    background-position: center !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translateY(0px);
+    width: 100%;
+    height: inherit;
+}
+@media (max-width: 500px) {
+    #parallax-container{
+        max-height: 200px;
+    }
+}
+@media (max-width: 654px) and (min-width: 501px) {
+    #parallax-container{
+        max-height: 240px;
+    }
+}
+@media (max-width: 949px) and (min-width: 655px) {
+    #parallax-container{
+        max-height: 350px;
+    }
+}
+@media (min-width: 950px) {
+    #parallax-container{
+        max-height: 100%;
+    }
+}
+
+#go-top, #go-down {
+    position: fixed;
+    right: 24px;
+    z-index: 99;
+    font-size: 24px;
+    border: none;
+    outline: none;
+    background-color: coral;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+}
+#go-top{
+    bottom: -10px;
+    display: none;
+}
+#go-down{
+    top: -10px;
+}
+#go-top:hover, #go-down {
+    background-color: #555;
+}

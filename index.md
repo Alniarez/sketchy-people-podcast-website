@@ -24,14 +24,13 @@ pagination:
 {% if paginator.total_pages > 1 %}
 <div class="pagination">
 {% if paginator.next_page %}
-    <a class="next" href="{{ paginator.next_page_path }}">Load more posts</a>
+  <a class="next" id="load-more" href="{{ paginator.next_page_path }}">Load more posts</a>
 {% endif %}
 </div>
 {% endif %}
 </div>
 
-<footer>
-  <p>End of the page</p>
+<footer class="container">
 </footer>
 
 <script src="//unpkg.com/jscroll/dist/jquery.jscroll.min.js"></script>

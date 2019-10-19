@@ -3,7 +3,7 @@
 /* Generic elements */
 html {
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Fira Sans", sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -111,7 +111,7 @@ a {
 }
 
 .full-screen {
-  height: 99.5%;
+  height: 100%;
   width: 100%;
 }
 
@@ -162,6 +162,40 @@ a {
   padding: 0.02rem 1rem;
 }
 
+nav{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+/* Medium screens */
+@media all and (max-width: 800px) {
+  nav {
+    justify-content: space-around;
+  }
+}
+
+/* Small screens */
+@media all and (max-width: 500px) {
+  nav {
+    flex-direction: column;
+  }
+}
+
+nav a {
+  text-decoration: none;
+  text-align: center; 
+  display: block;
+  padding: 1em;
+}
+
+nav a:hover{
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+
+/*
 .bar {
   width: 100%;
   overflow: hidden;
@@ -174,7 +208,7 @@ a {
   outline: 0;
   float: left;
 }
-
+*/
 .boxed {
   margin: 1rem;
   padding: 1rem;
