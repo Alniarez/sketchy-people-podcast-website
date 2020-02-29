@@ -8,11 +8,12 @@ plugins:
 
 pagination:
   enabled: true
-  per_page: 4
+  per_page: 3
+  permalink: '/page/:num/'
+  title: ' - page :num'
+  limit: 0
+  sort_field: 'date'
   sort_reverse: true
-  indexpage: page1
-  permalink: page:num
-  extension: json
 
 # Build settings
 markdown: kramdown
